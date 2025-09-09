@@ -5,12 +5,8 @@ RUN NEW_RELIC_DIR=$(curl -s 'https://download.newrelic.com/php_agent/release/' |
     sudo NR_INSTALL_USE_CP_NOT_LN=1 NR_INSTALL_SILENT=true /tmp/$NEW_RELIC_DIR/newrelic-install install && \
     rm -rf /tmp/newrelic-php5-* 
 
-RUN for PHP_VERSION in $(ls /etc/php); do \
-      rm -f /etc/php/${PHP_VERSION}/fpm/conf.d/newrelic.ini; \
-      rm -f /etc/php/${PHP_VERSION}/cli/conf.d/newrelic.ini; \
-      INI_PATH="/etc/php/${PHP_VERSION}/mods-available/newrelic.ini"; \
-      echo "extension=newrelic.so" >> ${INI_PATH}; \
-    done 
+RUN mv /etc/php/${DDEV_PHP_VERSION}/fpm/conf.d/newrelic.ini /etc/php/${DDEV_PHP_VERSION}/mods-available && \
+    rm -f /etc/php/${DDEV_PHP_VERSION}/cli/conf.d/newrelic.ini
 
 RUN cp /etc/newrelic/newrelic.cfg.template /etc/newrelic/newrelic.cfg
 RUN sudo /etc/init.d/newrelic-daemon stop
