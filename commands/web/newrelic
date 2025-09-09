@@ -28,7 +28,7 @@ function enable_newrelic {
   set_or_replace "newrelic.license" "${NEWRELIC_LICENSE_KEY}"
   set_or_replace "newrelic.appname" "${NEWRELIC_APPNAME}"
   phpdismod xhprof xdebug blackfire
-  phpenmod newrelic
+  phpenmod -v ${DDEV_PHP_VERSION} newrelic
   sudo /etc/init.d/newrelic-daemon start
   killall -USR2 php-fpm && killall -HUP nginx
   echo "✅ Enabled New Relic PHP extension and started daemon"
@@ -36,7 +36,7 @@ function enable_newrelic {
 }
 
 function disable_newrelic {
-  phpdismod newrelic
+  phpdismod -v ${DDEV_PHP_VERSION} newrelic
   killall -USR2 php-fpm
   sudo /etc/init.d/newrelic-daemon stop
   echo "🚫 Disabled New Relic PHP extension and stopped daemon"
