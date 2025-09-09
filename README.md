@@ -1,9 +1,9 @@
 [![add-on registry](https://img.shields.io/badge/DDEV-Add--on_Registry-blue)](https://addons.ddev.com)
-[![tests](https://github.com/dmytriikaiun/ddev-newrelic/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/dmytriikaiun/ddev-newrelic/actions/workflows/tests.yml?query=branch%3Amain)
-[![last commit](https://img.shields.io/github/last-commit/dmytriikaiun/ddev-newrelic)](https://github.com/dmytriikaiun/ddev-newrelic/commits)
-[![release](https://img.shields.io/github/v/release/dmytriikaiun/ddev-newrelic)](https://github.com/dmytriikaiun/ddev-newrelic/releases/latest)
+[![tests](https://github.com/tbkot/ddev-newrelic/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/tbkot/ddev-newrelic/actions/workflows/tests.yml?query=branch%3Amain)
+[![last commit](https://img.shields.io/github/last-commit/tbkot/ddev-newrelic)](https://github.com/tbkot/ddev-newrelic/commits)
+[![release](https://img.shields.io/github/v/release/tbkot/ddev-newrelic)](https://github.com/tbkot/ddev-newrelic/releases/latest)
 
-# DDEV Newrelic
+# DDEV New Relic
 
 - [Overview](#overview)
 - [Installation](#installation)
@@ -11,12 +11,12 @@
 
 ## Overview
 
-This add-on integrates Newrelic into your [DDEV](https://ddev.com/) project.
+This add-on integrates New Relic into your [DDEV](https://ddev.com/) project.
 
 ## Installation
 
 ```bash
-ddev add-on get dmytriikaiun/ddev-newrelic
+ddev add-on get tbkot/ddev-newrelic
 ddev restart
 ```
 
@@ -39,4 +39,4 @@ After installation, make sure to commit the `.ddev` directory to version control
 
 ## Credits
 
-**Contributed and maintained by [@dmytriikaiun](https://github.com/dmytriikaiun)**
+**Contributed and maintained by [@tbkot](https://github.com/tbkot)**
